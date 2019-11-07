@@ -46,11 +46,11 @@
 - Проверяем и убеждаемся что все сервисы подняты (RabbitMQ, Apache, PHP, MongoDB) и работают.
 - В MongoDB создаем БД **TestSales**, создаем коллекции **RetailCollection** и **SalesCollection**.
 - Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  ```php consumer.php```. Consumer это приемка и обработка очереди чеков от RabbitMQ.
-- После запуска consumer можно запускать генератор чеков, так же в CLI ```php cash.php 2019 1 1 America/Anchorage```
+- После запуска consumer можно запускать генератор чеков, так же в CLI 
+```php cash.php 2019 1 1 America/Anchorage```
 
 Параметры:
-```
-	CLI: php cash.php Year ShopNumber CashNumber TimeZone
+```CLI: php cash.php Year ShopNumber CashNumber TimeZone
 		Year:          2016 .. 2020, default 1
 		ShopNumber:    1 .. 99, default 1
 		CashNumber:      1 .. 99, default 1
@@ -62,3 +62,32 @@
 файл **GenChecks.sh**
 
 
+Пример работы cash.php
+```
+   2019-09-04 20:50:56  Создан чек: 105   Shop:1;  Cash:1;  GoodsCount:4;  BuySum:53453;  Sum:86890;
+   2019-09-04 20:59:30  Создан чек: 106   Shop:1;  Cash:1;  GoodsCount:5;  BuySum:50334;  Sum:81600;
+   2019-09-04 21:08:04  Создан чек: 107   Shop:1;  Cash:1;  GoodsCount:10;  BuySum:98441;  Sum:162010;
+   2019-09-04 21:16:38  Создан чек: 108   Shop:1;  Cash:1;  GoodsCount:5;  BuySum:67137;  Sum:106710;
+   2019-09-04 21:25:12  Создан чек: 109   Shop:1;  Cash:1;  GoodsCount:6;  BuySum:28984;  Sum:56370;
+   2019-09-04 21:33:46  Создан чек: 110   Shop:1;  Cash:1;  GoodsCount:13;  BuySum:108707;  Sum:168900;
+   2019-09-04 21:42:20  Создан чек: 111   Shop:1;  Cash:1;  GoodsCount:6;  BuySum:74793;  Sum:113580;
+   2019-09-04 21:50:54  Создан чек: 112   Shop:1;  Cash:1;  GoodsCount:3;  BuySum:31588;  Sum:55500;
+   2019-09-04 21:59:28  Создан чек: 113   Shop:1;  Cash:1;  GoodsCount:2;  BuySum:19950;  Sum:33260;
+
+
+Всего чеков: 1499
+```
+
+Пример работы consumer.php
+```
+
+Чек обработан: "CreateDT_Local":"2019-09-04 20:50:56","CreateDT_Stamp":1567659056,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 20:59:30","CreateDT_Stamp":1567659570,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:08:04","CreateDT_Stamp":1567660084,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:16:38","CreateDT_Stamp":1567660598,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:25:12","CreateDT_Stamp":1567661112,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:33:46","CreateDT_Stamp":1567661626,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:42:20","CreateDT_Stamp":1567662140,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:50:54","CreateDT_Stamp":1567662654,"TimeZoneName...
+Чек обработан: "CreateDT_Local":"2019-09-04 21:59:28","CreateDT_Stamp":1567663168,"TimeZoneName...
+```
