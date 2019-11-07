@@ -35,27 +35,33 @@
 
 Для менеджера очередей используем RabbitMQ, для СУБД NoSQL MongoDB.
 - Подымаем VPS, ставим Ubuntu, Apache, PHP, библиотеки для PHP.
-- Подымаем RabbitMQ подключение по локалке под quest.
-- Подымаем MongoDB, открываем доступ для внешки, ! делаем отдельный логин, с доступом только в нашу базу, переменная для подключения к MongoDB хранится в файле <B>login_vars.php</B> здесь этот файл отсутствует не закачан, формат файла:
+- Подымаем RabbitMQ подключение в локалке (localhost) под пользователем quest.
+- Подымаем MongoDB, открываем доступ для внешки, ! делаем отдельный логин, с доступом только в нашу базу, переменная для подключения к MongoDB хранится в файле <B>login_vars.php</B> здесь этот файл отсутствует не закачан,
 (!) Без отдельного внешнего логина, за несколько дней базу угоняют и вымогают биткоины!
+Пример, формат файла:
 <code>
 	$MongoDB_Login = "UserName:UserPassword@localhost:27017";
 </code>
 
 
+
 - Проверяем и убеждаемся что все сервисы подняты (RabbitMQ, Apache, PHP, MongoDB) и работают.
 - В MongoDB создаем БД <b>TestSales</b>, создаем коллекции <b>RetailCollection</b> и <b>SalesCollection</b>.
-- Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  <code>php consumer.php</code>.
+- Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  <code>php consumer.php</code>. Consumer это приемка и обработка очереди чеков от RabbitMQ.
 - После запуска consumer можно запускать генератор чеков, так же в CLI <code>php cash.php 2019 1 1 America/Anchorage</code>
 
 Параметры:
-<code>CLI: php cash.php Year ShopNumber CashNumber TimeZone<BR>
-Year:          2016 .. 2020, default 1<BR>
+<code>CLI: php cash.php Year ShopNumber CashNumber TimeZone
+
+
+Year:          2016 .. 2020, default 1
+
+
 ShopNumber:    1 .. 99, default 1<BR>
 CashNumber:      1 .. 99, default 1
 TiemZone: TiemZoneName (Linux Timezone ID), default "Europe/Samara"
    https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 </code>
 
-имеется файл заготовок для закачки чеков в БД сразу за несколько лет, 2016,2017,2018,2019 годы, занимает это несколько минут
+имеется исполняемый файл заготовок для закачки чеков в БД сразу за несколько лет, 2016, 2017, 2018, 2019 годы, занимает это несколько минут
 файл <B>GenChecks.sh</B>
