@@ -53,10 +53,7 @@
 Параметры:
 <code>CLI: php cash.php Year ShopNumber CashNumber TimeZone
 
-
 Year:          2016 .. 2020, default 1
-
-
 ShopNumber:    1 .. 99, default 1<BR>
 CashNumber:      1 .. 99, default 1
 TiemZone: TiemZoneName (Linux Timezone ID), default "Europe/Samara"
