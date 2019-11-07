@@ -56,7 +56,8 @@
 	php cash.php 2019 1 1 America/Anchorage 
 ```
 
-Параметры:```
+Параметры:
+```
 	CLI: php cash.php Year ShopNumber CashNumber TimeZone
 		Year:          2016 .. 2020, default 1
 		ShopNumber:    1 .. 99, default 1
