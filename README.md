@@ -52,8 +52,7 @@
 - Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем ```consumer.php```, 
 запуск как  ```php consumer.php```. Consumer это приемка и обработка чеков из очереди RabbitMQ.
 - После запуска consumer можно запускать генератор чеков, так же в CLI, пример: 
-```
-php cash.php 2019 1 1 America/Anchorage```
+``` php cash.php 2019 1 1 America/Anchorage ```
 
 Параметры:
 ```
