@@ -103,3 +103,5 @@
 
 пример шахматки:
 http://joxi.ru/xAeWg3dfRoozjm
+
+![сам пример шахматки](http://dl3.joxi.net/drive/2019/11/07/0039/0588/2597452/52/96af16ceaf.jpg)
