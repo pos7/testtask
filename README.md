@@ -1,6 +1,5 @@
 
-Задание:
-взято от сюда: https://docs.google.com/document/d/1H2LePo4ThiBJZGYnwD0744TL5NDQb-xdSfyvEYaDWyU/edit#
+Оригианальное задание взято тут: https://docs.google.com/document/d/1H2LePo4ThiBJZGYnwD0744TL5NDQb-xdSfyvEYaDWyU/edit# 
 
 ! текст (задание) походу меняют для разных испытуемых.
 
