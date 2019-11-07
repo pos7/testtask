@@ -24,7 +24,9 @@ $channel = $connection->channel();
 $channel->queue_declare('TestSalesQueue', false, false, false, false);
 
 include "login_vars.php";
-$client = new Client("mongodb://$MongoDB_Login/?authSource=TestSales&authMechanism=SCRAM-SHA-1");
+//$client = new Client("mongodb://$MongoDB_Login/?authSource=TestSales&authMechanism=SCRAM-SHA-1");
+$MDB_connect = new MongoDB\Client("mongodb://$MongoDB_Login/?authSource=TestSales&authMechanism=SCRAM-SHA-1");
+
 
 $CollectionChecks = $MDB_connect->TestSales->SalesCollection;
 $CollectionRetail = $MDB_connect->TestSales->RetailCollection;
