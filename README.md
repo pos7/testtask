@@ -58,3 +58,5 @@ TiemZone: TiemZoneName (Linux Timezone ID), default "Europe/Samara"
 
 имеется исполняемый файл заготовок для закачки чеков в БД сразу за несколько лет, 2016, 2017, 2018, 2019 годы, занимает это несколько минут
 файл **GenChecks.sh**
+
+
