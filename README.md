@@ -43,13 +43,16 @@
 </code>
 
 
-Проверяем и убеждаемся что все сервисы подняты (RabbitMQ, Apache, PHP, MongoDB) и работают.
-В MongoDB создаем БД <b>TestSales</b>, создаем коллекции <b>RetailCollection</b> и <b>SalesCollection</b>
-Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  <code>php consumer.php</code>
-после запуска consumer можно запускать генератор чеков, так же в CLI <code>php cash.php 2019 1 1 America/Anchorage</code>
+- Проверяем и убеждаемся что все сервисы подняты (RabbitMQ, Apache, PHP, MongoDB) и работают.
+- В MongoDB создаем БД <b>TestSales</b>, создаем коллекции <b>RetailCollection</b> и <b>SalesCollection</b>.
+- Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  <code>php consumer.php</code>.
+- После запуска consumer можно запускать генератор чеков, так же в CLI <code>php cash.php 2019 1 1 America/Anchorage</code>
+
 Параметры:
 <code>CLI: php cash.php Year ShopNumber CashNumber TimeZone
+
 Year:          2016 .. 2020, default 1
+
 ShopNumber:    1 .. 99, default 1
 CashNumber:      1 .. 99, default 1
 TiemZone: TiemZoneName (Linux Timezone ID), default "Europe/Samara"
