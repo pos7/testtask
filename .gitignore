@@ -3,3 +3,4 @@ login_vars.php
 .cache
 .gnupg
 .config
+push.php
