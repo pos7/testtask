@@ -31,6 +31,7 @@
  
 
 
+
 **Описание, как делаем, как все работает:**
 
 Для менеджера очередей используем RabbitMQ, для СУБД NoSQL MongoDB.
@@ -50,7 +51,8 @@
 ```php cash.php 2019 1 1 America/Anchorage```
 
 Параметры:
-```CLI: php cash.php Year ShopNumber CashNumber TimeZone
+```
+	CLI: php cash.php Year ShopNumber CashNumber TimeZone
 		Year:          2016 .. 2020, default 1
 		ShopNumber:    1 .. 99, default 1
 		CashNumber:      1 .. 99, default 1
@@ -90,5 +92,5 @@
    Чек обработан: "CreateDT_Local":"2019-09-04 21:59:28","CreateDT_Stamp":1567663168,"TimeZoneName...
 ```
 
-[пример шахматки]http://151.80.14.150/
+пример шахматки: http://151.80.14.150/  
 (на время жизни VPS)
