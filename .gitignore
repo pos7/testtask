@@ -1,0 +1,5 @@
+login_vars.php
+.local/
+.cache
+.gnupg
+.config
