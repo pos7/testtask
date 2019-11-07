@@ -3,4 +3,5 @@ login_vars.php
 .cache
 .gnupg
 .config
-push.php
+push.sh
+.gitignore
