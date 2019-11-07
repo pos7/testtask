@@ -6,7 +6,7 @@
 
 Исходное задание:
 
-База данных (<B>mongodb</B>):
+База данных (**mongodb**):
 Создать коллекцию в которой хранятся чеки:
 - номер чека (int)
 - номер кассы (int)
@@ -31,33 +31,31 @@
  
 
 
-<B>Описание, как делаем, как все работает:</B>
+**Описание, как делаем, как все работает:**
 
 Для менеджера очередей используем RabbitMQ, для СУБД NoSQL MongoDB.
 - Подымаем VPS, ставим Ubuntu, Apache, PHP, библиотеки для PHP.
 - Подымаем RabbitMQ подключение в локалке (localhost) под пользователем quest.
-- Подымаем MongoDB, открываем доступ для внешки, ! делаем отдельный логин, с доступом только в нашу базу, переменная для подключения к MongoDB хранится в файле <B>login_vars.php</B> здесь этот файл отсутствует не закачан,
+- Подымаем MongoDB, открываем доступ для внешки (так удобно работать с любой машины), но! делаем отдельный логин, с доступом только в нашу базу, переменная для подключения к MongoDB хранится в файле **login_vars.php** здесь этот файл отсутствует не закачан,
 (!) Без отдельного внешнего логина, за несколько дней базу угоняют и вымогают биткоины!
 Пример, формат файла:
-<code>
+```
 	$MongoDB_Login = "UserName:UserPassword@localhost:27017";
-</code>
-
-
+```
 
 - Проверяем и убеждаемся что все сервисы подняты (RabbitMQ, Apache, PHP, MongoDB) и работают.
-- В MongoDB создаем БД <b>TestSales</b>, создаем коллекции <b>RetailCollection</b> и <b>SalesCollection</b>.
-- Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  <code>php consumer.php</code>. Consumer это приемка и обработка очереди чеков от RabbitMQ.
-- После запуска consumer можно запускать генератор чеков, так же в CLI <code>php cash.php 2019 1 1 America/Anchorage</code>
+- В MongoDB создаем БД **TestSales**, создаем коллекции **RetailCollection** и **SalesCollection**.
+- Для наполнения БД чеками, первым делом в CLI (в комнадной строке) запускаем consumer.php, запуск как  ```php consumer.php```. Consumer это приемка и обработка очереди чеков от RabbitMQ.
+- После запуска consumer можно запускать генератор чеков, так же в CLI ```php cash.php 2019 1 1 America/Anchorage```
 
 Параметры:
-<code>CLI: php cash.php Year ShopNumber CashNumber TimeZone</code>
-<code>Year:          2016 .. 2020, default 1</code>
-<code>ShopNumber:    1 .. 99, default 1</code>
+```CLI: php cash.php Year ShopNumber CashNumber TimeZone
+Year:          2016 .. 2020, default 1
+ShopNumber:    1 .. 99, default 1
 CashNumber:      1 .. 99, default 1
 TiemZone: TiemZoneName (Linux Timezone ID), default "Europe/Samara"
-   https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+   https://en.wikipedia.org/wiki/List_of_tz_database_time_zones```
 
 
 имеется исполняемый файл заготовок для закачки чеков в БД сразу за несколько лет, 2016, 2017, 2018, 2019 годы, занимает это несколько минут
-файл <B>GenChecks.sh</B>
+файл **GenChecks.sh**
